@@ -5,7 +5,7 @@ int generate_fluid_particles(int index)
     int half_field_size = static_cast<int>(FIELD_SIZE / 2 + 0.5f);
     for (int i = 0; i < half_field_size; i++) {
         for (int j = 0; j < FIELD_SIZE; j++) {
-            printf("Generating fluid particle %d %d\n", i, j);
+            //printf("Generating fluid particle %d %d\n", i, j);
             x[index] = (WALL_THICKNESS + i) * SPACING;
             y[index] = (WALL_THICKNESS + j) * SPACING;
             ptype[index] = 1;
@@ -24,7 +24,7 @@ int generate_wall_particles(int index)
             int overlap_y = std::max(-j + WALL_THICKNESS, j - WALL_THICKNESS - FIELD_SIZE + 1);
             int overlap = std::max(overlap_x, overlap_y);
             if (overlap > 0) {
-                printf("Generating wall particle %d %d\n", i, j);
+                //printf("Generating wall particle %d %d\n", i, j);
                 x[index] = i * SPACING;
                 y[index] = j * SPACING;
                 ptype[index] = 0;
@@ -33,13 +33,4 @@ int generate_wall_particles(int index)
         }
     }
     return index;
-}
-
-int print_particles()
-{
-    printf("Printing fluid particles\n");
-    for (int i = 0; i < PARTICLE_COUNT; i++) {
-        printf("Particle x %3.2f y %3.2f ptype %d\n", x[i], y[i], ptype[i]);
-    }
-    return 0;
 }

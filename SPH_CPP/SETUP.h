@@ -9,7 +9,8 @@ constexpr float C0 = 1500; // ms^-1
 constexpr float TIMESTEP = 0.000002f; // s
 constexpr int FIELD_SIZE = 20; // number of fluid particles in y
 constexpr int WALL_THICKNESS = 3; // number of particles across wall
-constexpr float BOX_SIZE = W_LENGTH * 1.8214f; // m gives 0.99 area of the weight function
+constexpr int BOX_MULTIPLIER = 1;
+constexpr float BOX_SIZE = W_LENGTH * 1.8214f / BOX_MULTIPLIER; // m gives 0.99 area of the weight function
 
 constexpr int particle_count() {
     return (FIELD_SIZE + WALL_THICKNESS * 2) * (FIELD_SIZE + WALL_THICKNESS * 2)
@@ -26,3 +27,5 @@ float ro[PARTICLE_COUNT];
 float p[PARTICLE_COUNT];
 float vol[PARTICLE_COUNT];
 int ptype[PARTICLE_COUNT];
+int box_x[PARTICLE_COUNT];
+int box_y[PARTICLE_COUNT];

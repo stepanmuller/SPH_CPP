@@ -131,6 +131,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Field_generator.h" />
+    <ClInclude Include="Interaction_manager.h" />
+    <ClInclude Include="Particle_printer.h" />
     <ClInclude Include="SETUP.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

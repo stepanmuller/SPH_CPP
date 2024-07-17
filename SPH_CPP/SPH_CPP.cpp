@@ -5,6 +5,8 @@ using namespace std;
 
 #include "SETUP.h"
 #include "Field_generator.h"
+#include "Interaction_manager.h"
+#include "Particle_printer.h"
 
 int main()
 {
@@ -13,6 +15,7 @@ int main()
     std::fill_n(vol, PARTICLE_COUNT, pow(SPACING, 2));
     int index = generate_fluid_particles(0);
     index = generate_wall_particles(index);
+    update_boxes();
     print_particles();
     return 0;
 }
