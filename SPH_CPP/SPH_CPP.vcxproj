@@ -132,6 +132,7 @@
   <ItemGroup>
     <ClInclude Include="Field_generator.h" />
     <ClInclude Include="Interaction_manager.h" />
+    <ClInclude Include="Iterator.h" />
     <ClInclude Include="Particle_printer.h" />
     <ClInclude Include="SETUP.h" />
   </ItemGroup>

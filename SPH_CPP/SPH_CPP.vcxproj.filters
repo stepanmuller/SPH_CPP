@@ -32,5 +32,8 @@
     <ClInclude Include="Particle_printer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Iterator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

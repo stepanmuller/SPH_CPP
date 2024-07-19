@@ -7,8 +7,8 @@ constexpr float KIN_VISCOSITY = 1e-6f; // m^2s^-1
 constexpr float RO_0 = 1000; // kgm^-3
 constexpr float C0 = 1500; // ms^-1
 constexpr float TIMESTEP = 0.000002f; // s
-constexpr int FIELD_SIZE = 20; // number of fluid particles in y
-constexpr int WALL_THICKNESS = 3; // number of particles across wall
+constexpr int FIELD_SIZE = 6; // number of fluid particles in y
+constexpr int WALL_THICKNESS = 0; // number of particles across wall
 constexpr int BOX_MULTIPLIER = 1;
 constexpr float BOX_SIZE = W_LENGTH * 1.8214f / BOX_MULTIPLIER; // m gives 0.99 area of the weight function
 
@@ -27,5 +27,4 @@ float ro[PARTICLE_COUNT];
 float p[PARTICLE_COUNT];
 float vol[PARTICLE_COUNT];
 int ptype[PARTICLE_COUNT];
-int box_x[PARTICLE_COUNT];
-int box_y[PARTICLE_COUNT];
+int pbox[PARTICLE_COUNT];
