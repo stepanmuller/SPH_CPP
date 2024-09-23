@@ -108,15 +108,23 @@ int get_I(std::vector<int>& rows, std::vector<int>& cols)
             friend_box = mybox + neighbours[i];
             if (friend_box >= 0 && friend_box < box_count) {
                 for (int friend_particle = 0; friend_particle < box_fill[friend_box]; friend_particle++) {
-                    if (p != box_list[box_cummulative[friend_box] + friend_particle]) {
-                        rows[counter] = p;
-                        cols[counter] = box_list[box_cummulative[friend_box] + friend_particle];
-                        counter++;
+                    int f = box_list[box_cummulative[friend_box] + friend_particle];
+                    if (p < f) {
+                        if (pow(x[f]-x[p], 2) + pow(y[f]-y[p], 2) < pow(W_LENGTH * 1.8214f, 2)) {
+                            rows[counter] = p;
+                            cols[counter] = f;
+                            rows[counter + 1] = f;
+                            cols[counter + 1] = p;
+                            counter = counter + 2;
+                        }
                     }
                 }
             }
         }
     }
+    interaction_count = counter;
+    rows.resize(interaction_count);
+    cols.resize(interaction_count);
     for (int i = 0; i < interaction_count; i++) {
         //printf("Interaction %d row %d col %d\n", i, rows[i], cols[i]);
     }

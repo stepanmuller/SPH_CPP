@@ -7,12 +7,12 @@ constexpr float KIN_VISCOSITY = 1e-6f; // m^2s^-1
 constexpr float RO_0 = 1000; // kgm^-3
 constexpr float C_0 = 150; // ms^-1
 constexpr float TIMESTEP = 0.00002f; // s
-constexpr int FIELD_SIZE = 20; // number of fluid particles in y
+constexpr int FIELD_SIZE = 50; // number of fluid particles in y
 constexpr int WALL_THICKNESS = 3; // number of particles across wall
 constexpr int BOX_RANGE_X = 0;
 constexpr int BOX_RANGE_Y = 5;
-constexpr float BOX_RANGE = pow(pow(BOX_RANGE_X, 2) + pow(BOX_RANGE_Y, 2), 0.5);
-constexpr float BOX_SIZE = W_LENGTH * 1.8214f / BOX_RANGE; // m gives 0.99 area of the weight function
+float BOX_RANGE = pow(pow(BOX_RANGE_X, 2) + pow(BOX_RANGE_Y, 2), 0.5);
+float BOX_SIZE = W_LENGTH * 1.8214f / BOX_RANGE; // m gives 0.99 area of the weight function
 const double PI = 3.14159265358979323846;
 
 float INTERACTION_AREA_MULTIPLIER = 0;

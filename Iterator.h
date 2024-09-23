@@ -41,7 +41,6 @@ void run_iteration()
     std::fill_n(DvDt, PARTICLE_COUNT, G_Y);
 
     //printf("INTERACTION COUNT %d\n", interaction_count);
-
     for (int i = 0; i < interaction_count; i++) {
         data = Du[i] * Wx[i] + Dv[i] * Wy[i];
         //printf("row %d col %d data %10.9f\n", rows[i], cols[i], data);
